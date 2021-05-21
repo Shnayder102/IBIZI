@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿//Вариант №7 - Шифр Трисемуса
+#include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
@@ -35,7 +36,7 @@ string cryption(string alph[26], string f)
                 cout << "В фразе был встречен необрабатываемый символ. Шифрование не удалось." << endl;
                 return f;
             }
-            else if ((j > 0) && (j < 19))
+            else if ((j >= 0) && (j < 19))
             {
                 s.append(alph[j + 7]);
             }
@@ -72,7 +73,7 @@ string decryption(string alph[26], string f)
                 cout << "В фразе был встречен необрабатываемый символ. Расшифровка не удалась." << endl;
                 return f;
             }
-            else if ((j > 0) && (j < 5))
+            else if ((j >= 0) && (j < 5))
             {
                 s.append(alph[j + 21]);
             }
