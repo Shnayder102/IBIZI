@@ -13,25 +13,25 @@ def generate_key_pair(p, q):
         raise ValueError('Числа не должны быть одинаковыми!')
     n = p * q
 
-    phi = (p-1) * (q-1)
+    d = (p-1) * (q-1)
 
-    e = random.randrange(1, phi)
+    e = random.randrange(1, d)
 
-    g = gcd(e, phi)
+    g = gcd(e, d)
     while g != 1:
-        e = random.randrange(1, phi)
-        g = gcd(e, phi)
+        e = random.randrange(1, d)
+        g = gcd(e, d)
 
-    d = multiplicative_inverse(e, phi)
+    s = multiplicative_inverse(e, d)
 
-    return ((e, n), (d, n))
+    return ((e, n), (s, n))
 
-def multiplicative_inverse(e, phi):
-    d = 0
+def multiplicative_inverse(e, d):
+    k = 0
     x1 = 0
     x2 = 1
     y1 = 1
-    temp_phi = phi
+    temp_phi = d
 
     while e > 0:
         temp1 = temp_phi // e
@@ -40,15 +40,15 @@ def multiplicative_inverse(e, phi):
         e = temp2
 
         x = x2 - temp1 * x1
-        y = d - temp1 * y1
+        y = k - temp1 * y1
 
         x2 = x1
         x1 = x
-        d = y1
+        k = y1
         y1 = y
 
     if temp_phi == 1:
-        return d + phi
+        return k + d
 
 def encrypt(pk, plaintext):
     key, n = pk
@@ -67,12 +67,12 @@ if __name__ == "__main__":
     print("RSA crypt: ")
 
     p = int(random.randrange(1, 99999999999999999999999999999999999999999999))
-    q = int(random.randrange(round(10000000000000000000000000000000000000000000/p), round(99999999999999999999999999999999999999999999/p)))
+    q = int(random.randrange(10000000000000000000000000000000000000000000//p, 99999999999999999999999999999999999999999999//p))
 
     while not isprime(p):
         p = int(random.randrange(1, 99999999999999999999999999999999999999999999))
     while not isprime(q):
-        q = int(random.randrange(round(10000000000000000000000000000000000000000000/p), round(99999999999999999999999999999999999999999999/p)))
+        q = int(random.randrange(10000000000000000000000000000000000000000000//p, 99999999999999999999999999999999999999999999//p))
 
     public, private = generate_key_pair(p, q)
 
