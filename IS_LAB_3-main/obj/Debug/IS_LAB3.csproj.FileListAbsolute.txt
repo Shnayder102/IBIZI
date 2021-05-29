@@ -1,0 +1,10 @@
+D:\programms\ibizi\IS_LAB_3-main\bin\Debug\IS_LAB3.exe.config
+D:\programms\ibizi\IS_LAB_3-main\bin\Debug\IS_LAB3.exe
+D:\programms\ibizi\IS_LAB_3-main\bin\Debug\IS_LAB3.pdb
+D:\programms\ibizi\IS_LAB_3-main\obj\Debug\IS_LAB3.csprojAssemblyReference.cache
+D:\programms\ibizi\IS_LAB_3-main\obj\Debug\IS_LAB3.Form1.resources
+D:\programms\ibizi\IS_LAB_3-main\obj\Debug\IS_LAB3.Properties.Resources.resources
+D:\programms\ibizi\IS_LAB_3-main\obj\Debug\IS_LAB3.csproj.GenerateResource.cache
+D:\programms\ibizi\IS_LAB_3-main\obj\Debug\IS_LAB3.csproj.CoreCompileInputs.cache
+D:\programms\ibizi\IS_LAB_3-main\obj\Debug\IS_LAB3.exe
+D:\programms\ibizi\IS_LAB_3-main\obj\Debug\IS_LAB3.pdb
